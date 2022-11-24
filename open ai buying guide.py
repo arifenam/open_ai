@@ -11,10 +11,10 @@ import openai
 openai.api_key = os.getenv('OPEN_AI_API')
 
 
-def open_ai_prompt(prompt):
+def open_ai_prompt(what_to_write):
     response = openai.Completion.create(
         model="text-davinci-002",
-        prompt=prompt,
+        prompt=what_to_write,
         temperature=0.7,
         max_tokens=256,
         top_p=1,
@@ -72,7 +72,7 @@ for kw in keywords:
     why = f'Why {kw} Is Important'.title()
     how = f'How To Choose The Best {kw}'.title()
     consider = f'What Feature Should be considered while buying {kw}'.title()
-    conc = f'conclusion About Best {kw}'.title()
+    conc = f'conclusion'.title()
 
     # Wp_Heading
 
